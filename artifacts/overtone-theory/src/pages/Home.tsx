@@ -134,6 +134,9 @@ export default function Home() {
       {/* 5. WHO THIS IS FOR */}
       <section id="for-you" className="py-24 md:py-32 px-6 bg-gradient-to-b from-abyss to-purple-reign text-clean-white">
         <div className="max-w-6xl mx-auto">
+          <FadeIn>
+            <h2 className="text-3xl md:text-4xl font-bold mb-16 text-center">Who This Is For</h2>
+          </FadeIn>
           <div className="grid md:grid-cols-2 gap-16 lg:gap-24">
             <FadeIn>
               <h3 className="text-2xl md:text-3xl font-bold mb-8 text-clean-white">This is for you if...</h3>
