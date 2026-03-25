@@ -224,7 +224,7 @@ export default function Home() {
       </section>
 
       {/* 10. GO DEEPER */}
-      <section className="py-24 md:py-32 px-6 bg-clean-white text-abyss text-center border-b border-black/5">
+      <section className="py-24 md:py-32 px-6 bg-clean-white text-abyss text-center border-b border-abyss/10">
         <div className="max-w-3xl mx-auto">
           <FadeIn>
             <h2 className="text-3xl md:text-4xl font-bold mb-8 text-purple-reign">Go deeper</h2>
@@ -251,11 +251,11 @@ export default function Home() {
             <CtaButton href="#" className="mb-14">Let's chat</CtaButton>
             
             {/* Calendly Placeholder */}
-            <div className="border-2 border-soft-violet/30 rounded-xl p-16 flex items-center justify-center bg-white/5 mb-16">
+            <div className="border-2 border-soft-violet/30 rounded-xl p-16 flex items-center justify-center bg-clean-white/5 mb-16">
               <p className="font-sans text-soft-violet">Calendly embed goes here</p>
             </div>
 
-            <div className="max-w-xl mx-auto text-left bg-white/5 p-8 md:p-12 rounded-2xl border border-white/10">
+            <div className="max-w-xl mx-auto text-left bg-clean-white/5 p-8 md:p-12 rounded-2xl border border-clean-white/10">
               <h3 className="text-2xl font-bold mb-8 text-center text-signal-gold">Send a message</h3>
               <form className="space-y-6" onSubmit={(e) => e.preventDefault()}>
                 <div>
@@ -284,7 +284,7 @@ export default function Home() {
       </section>
 
       {/* 13. FOOTER */}
-      <footer className="bg-abyss text-clean-white/60 py-12 px-6 border-t border-white/10">
+      <footer className="bg-abyss text-clean-white/60 py-12 px-6 border-t border-clean-white/10">
         <div className="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between gap-6">
           <p className="font-sans text-sm">© MIDWID 2026 | overtonetheory.art</p>
           <p className="font-sans text-sm text-soft-violet/80 text-center">Payment: Venmo / CashApp (for workshop PWYW)</p>
@@ -338,7 +338,7 @@ function StoriesSection() {
                 className={`px-6 py-3 rounded-full font-sans font-bold text-sm md:text-base transition-all duration-300 ${
                   activeTab === idx 
                     ? 'bg-purple-reign text-clean-white shadow-md transform -translate-y-1' 
-                    : 'bg-black/5 text-abyss/70 hover:bg-black/10'
+                    : 'bg-abyss/8 text-abyss/70 hover:bg-abyss/15'
                 }`}
               >
                 {story.name}
@@ -347,7 +347,7 @@ function StoriesSection() {
           </div>
 
           {/* Content */}
-          <div className="bg-white rounded-3xl p-8 md:p-12 shadow-xl shadow-black/5 border border-black/5 min-h-[400px]">
+          <div className="bg-clean-white rounded-3xl p-8 md:p-12 shadow-xl shadow-abyss/5 border border-abyss/8 min-h-[400px]">
             {stories.map((story, idx) => (
               <div 
                 key={story.name} 
@@ -390,7 +390,7 @@ function FaqSection() {
       a: "No. I'm not a therapist, and The Overtone Theory is not therapy. It's a creative development practice. We do explore emotions and internal blocks, but always in service of your creative work. If deeper personal issues come up, I'll encourage you to work with a qualified professional."
     },
     {
-      q: "Is this 'manifest your destiny' woo-woo stuff?",
+      q: 'Is this "manifest your destiny" woo-woo stuff?',
       a: "Not really. Everything I teach is grounded in how your mind, body, and imagination actually work together. Your brain generates electrical signals. Your muscles operate on electrical impulse. Your fascia is piezoelectric. These are measurable, scientific facts. There are also plenty of things we just don't understand yet about what makes you YOU separate from your body. I use all of these to explain what's happening when you're in a creative state — and how to get there on purpose. No crystals, no vision boards, no uncomfortable practices."
     },
     {
@@ -418,7 +418,7 @@ function FaqSection() {
             return (
               <FadeIn key={idx} delay={idx * 100}>
                 <div 
-                  className={`bg-white rounded-2xl border transition-colors duration-300 ${isOpen ? 'border-purple-reign/30 shadow-lg' : 'border-black/5 hover:border-purple-reign/20'}`}
+                  className={`bg-clean-white rounded-2xl border transition-colors duration-300 ${isOpen ? 'border-purple-reign/30 shadow-lg' : 'border-abyss/8 hover:border-purple-reign/20'}`}
                 >
                   <button
                     onClick={() => setOpenIdx(isOpen ? null : idx)}
