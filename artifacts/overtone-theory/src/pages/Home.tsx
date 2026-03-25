@@ -242,9 +242,10 @@ export default function Home() {
         <div className="max-w-3xl mx-auto text-center">
           <FadeIn>
             <h2 className="text-3xl md:text-4xl font-bold mb-6">Ready to tune in?</h2>
-            <p className="text-lg md:text-xl font-serif mb-12 text-clean-white/90">
+            <p className="text-lg md:text-xl font-serif mb-10 text-clean-white/90">
               Book a free call and let's talk about where you are and where you want to go. No pitch, no script. Just a real conversation.
             </p>
+            <CtaButton href="#" className="mb-14">Let's chat</CtaButton>
             
             {/* Calendly Placeholder */}
             <div className="border-2 border-soft-violet/30 rounded-xl p-16 flex items-center justify-center bg-white/5 mb-16">
@@ -283,7 +284,7 @@ export default function Home() {
       <footer className="bg-abyss text-clean-white/60 py-12 px-6 border-t border-white/10">
         <div className="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between gap-6">
           <p className="font-sans text-sm">© MIDWID 2026 | overtonetheory.art</p>
-          <p className="font-sans text-sm text-soft-violet/80 text-center">Workshops are pay-what-you-will: Venmo / CashApp</p>
+          <p className="font-sans text-sm text-soft-violet/80 text-center">Payment: Venmo / CashApp (for workshop PWYW)</p>
           <a href="#" className="text-clean-white/60 hover:text-signal-gold transition-colors" aria-label="Instagram">
             <Instagram size={20} />
           </a>
