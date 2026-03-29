@@ -5,13 +5,15 @@ interface CtaButtonProps {
   children: ReactNode;
   className?: string;
   onClick?: () => void;
+  external?: boolean;
 }
 
-export function CtaButton({ href, children, className = '', onClick }: CtaButtonProps) {
+export function CtaButton({ href, children, className = '', onClick, external = false }: CtaButtonProps) {
   return (
     <a
       href={href}
       onClick={onClick}
+      {...(external ? { target: '_blank', rel: 'noopener noreferrer' } : {})}
       className={`
         inline-flex items-center justify-center
         bg-signal-gold text-abyss font-sans font-bold 

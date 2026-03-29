@@ -46,7 +46,9 @@ export function Navigation() {
               </a>
             ))}
             <a
-              href="#contact"
+              href="https://calendly.com/dj-overtonetheory/30min"
+              target="_blank"
+              rel="noopener noreferrer"
               className="bg-signal-gold text-abyss font-sans font-bold text-sm px-6 py-2.5 rounded-full hover:brightness-110 hover:shadow-[0_0_15px_rgba(250,204,21,0.4)] transition-all duration-300 transform hover:-translate-y-0.5"
             >
               Let's Chat
@@ -82,7 +84,9 @@ export function Navigation() {
             </a>
           ))}
           <a
-            href="#contact"
+            href="https://calendly.com/dj-overtonetheory/30min"
+            target="_blank"
+            rel="noopener noreferrer"
             className="bg-signal-gold text-abyss font-sans font-bold text-lg px-8 py-3 rounded-full mt-4"
             onClick={() => setIsMobileMenuOpen(false)}
           >

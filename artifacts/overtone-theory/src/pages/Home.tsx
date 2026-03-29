@@ -29,7 +29,7 @@ export default function Home() {
           </FadeIn>
           
           <FadeIn delay={400} className="flex flex-col items-center gap-6">
-            <CtaButton href="#contact">Let's chat</CtaButton>
+            <CtaButton href="https://calendly.com/dj-overtonetheory/30min" external>Let's chat</CtaButton>
             <a href="#process" className="font-sans text-sm font-medium text-soft-violet hover:text-signal-gold transition-colors">
               How does this work?
             </a>
@@ -218,7 +218,7 @@ export default function Home() {
               <p>In one hour, you'll work through a guided scenario, connect with a brief meditation, and walk away with a real shift in how you understand your own creative process. Some people come once and get what they need. Some come back regularly. Both are great.</p>
               <p>Workshops are pay-what-you-will. I believe in making this accessible, and I trust you to value it honestly.</p>
             </div>
-            <CtaButton href="#contact">See upcoming workshops</CtaButton>
+            <CtaButton href="https://calendly.com/dj-overtonetheory/30min" external>See upcoming workshops</CtaButton>
           </FadeIn>
         </div>
       </section>
@@ -232,7 +232,7 @@ export default function Home() {
               <p>If you want to go further than a workshop can take you, I work with people one-on-one, or small groups of people working on the same project. These are longer sessions — anywhere from a focused hour to a full day — tailored to where you are and what you're trying to create.</p>
               <p>We'll talk about it on a free call first. No pitch, no pressure. Just a conversation about where you are and whether this is the right fit.</p>
             </div>
-            <CtaButton href="#contact">Book a free call</CtaButton>
+            <CtaButton href="https://calendly.com/dj-overtonetheory/30min" external>Book a free call</CtaButton>
           </FadeIn>
         </div>
       </section>
@@ -248,11 +248,17 @@ export default function Home() {
             <p className="text-lg md:text-xl font-serif mb-10 text-clean-white/90">
               Book a free call and let's talk about where you are and where you want to go. No pitch, no script. Just a real conversation.
             </p>
-            <CtaButton href="#" className="mb-14">Let's chat</CtaButton>
+            <CtaButton href="https://calendly.com/dj-overtonetheory/30min" external className="mb-14">Let's chat</CtaButton>
             
-            {/* Calendly Placeholder */}
-            <div className="border-2 border-soft-violet/30 rounded-xl p-16 flex items-center justify-center bg-clean-white/5 mb-16">
-              <p className="font-sans text-soft-violet">Calendly embed goes here</p>
+            {/* Calendly Inline Embed */}
+            <div className="rounded-2xl overflow-hidden mb-16 border border-soft-violet/20">
+              <iframe
+                src="https://calendly.com/dj-overtonetheory/30min?hide_gdpr_banner=1&background_color=0F0326&text_color=FAFAFA&primary_color=7E22CE"
+                width="100%"
+                height="700"
+                frameBorder="0"
+                title="Book a free call with DJ"
+              />
             </div>
 
             <div className="max-w-xl mx-auto text-left bg-clean-white/5 p-8 md:p-12 rounded-2xl border border-clean-white/10">
