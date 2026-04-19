@@ -24,8 +24,9 @@ export default function Home() {
           
           <FadeIn delay={200}>
             <p className="text-lg md:text-xl text-clean-white/90 max-w-2xl mx-auto mb-12 font-serif leading-relaxed">
-              The Overtone Theory is a creative development practice that helps artists, musicians, writers, and creators of all kinds break through internal blocks to make authentic work — the kind that actually feels like you.
+              The Overtone Theory is a creative development practice that helps musicians, writers, artists and creators of all kinds break through internal blocks to make the kind that actually feels like you.
             </p>
+            <p className="text-lg md:text-xl text-clean-white/90 max-w-2xl mx-auto mb-12 font-serif leading-relaxed">You just have to know where to look.</p>
           </FadeIn>
           
           <FadeIn delay={400} className="flex flex-col items-center gap-6">
@@ -49,10 +50,10 @@ export default function Home() {
               <p>You've got the talent. You've put in the years. You know you're capable of making something that matters.</p>
               <p>But somewhere between the idea in your head and the thing you actually make, something gets lost. The spark fizzles. The inner critic shows up. You walk away feeling more frustrated than when you started.</p>
               <p>So you try harder. You force it. You noodle, you stare at the blank page, you hope inspiration will strike if you just sit there long enough.</p>
-              <p className="font-semibold text-purple-reign">Here's the thing: the problem exists within you. And you innately have the ability to do something about it.</p>
+              <p className="font-semibold text-purple-reign">What if I told you that you already innately have the ability to do something about it?</p>
               <p>The signal is already there — it's always been there. But somewhere along the way, you let the inner voice take over. The one that edits before you create, judges before you finish, and convinces you that nothing you make is good enough.</p>
-              <p>You got in your own way, and the static took over. That's not a character flaw. It's a habit. And habits can be changed.</p>
-              <p className="font-sans font-bold text-xl text-purple-reign pt-4">The Overtone Theory is an active practice for tuning back in.</p>
+              <p>You got in your own way, and the static took over. That's not a character flaw. You're just human.</p>
+              <p className="font-sans font-bold text-xl text-purple-reign pt-4">The Overtone Theory is a fundamental understanding for actively tuning back in.</p>
             </div>
           </FadeIn>
         </div>
@@ -79,7 +80,7 @@ export default function Home() {
           <FadeIn delay={300}>
             <h3 className="text-2xl md:text-3xl font-bold mt-16 mb-6 text-soft-violet">Your body is an antenna.</h3>
             <div className="space-y-6 text-lg md:text-xl font-serif text-clean-white/90">
-              <p>This isn't a metaphor. Your brain converts chemical energy into electrical signals. Your muscles operate on electrical impulse. Your brain and fascia are literally piezoelectric — they generate a measurable electric field through movement. Your body produces and exists within its own electromagnetic field.</p>
+              <p>This isn't a metaphor. Your brain and fascia are literally piezoelectric — they generate a measurable electric field through physical movement and chemical processes. Your body produces and exists within its own electromagnetic field.</p>
               <p>You — the one piloting your meat suit — you are the one making sense of the signals your body receives. Like tuning a radio, you get to choose what frequency you're paying attention to. The antenna doesn't care if it's picking up jazz, static, or silence. It just receives whatever's in the field.</p>
               <p>You are the choice-maker. You decide what to tune into.</p>
               <p>When you're creatively blocked, you're just tuned to the wrong station. The signal is still there. You've just lost the frequency.</p>
