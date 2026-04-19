@@ -404,11 +404,11 @@ function FaqSection() {
     },
     {
       q: "I've tried everything. Can this really help?",
-      a: "Really? Everything? You have to admit,The Overtone Theory is a different approach entirely. It works with your internal state, not your external effort."
+      a: "I mean, you gotta admit, there's no WAY you've tried everything. You've tried the things you could think of, and now it's time for something completely different. The Overtone Theory is a different approach entirely. It works with your internal state, not your external effort."
     },
     {
       q: "There are a lot of creative coaches out there. Why should I trust you?",
-      a: "I've spent 15+ years working with over 250 bands and artists in professional settings. I have a degree in Electrical Engineering that lets me explain exactly what's happening in your body and brain when you create. And I'm not here to build a following or sell a course. I work with one person at a time, in real conversation, because that's how this actually works. You'll know within the first five minutes of talking to me whether we're a fit."
+      a: "I've spent 15+ years working with a multitude of bands and artists in professional settings. My education has taught me how to explain what's happening in your body and brain when you create. And I'm not here to build a following or sell a course. I work with individuals and small groups, with honest and compassionate conversation, because that's how this actually works. You'll know within the first five minutes of talking to me whether we're a fit."
     }
   ];
 
