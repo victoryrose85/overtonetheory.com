@@ -24,8 +24,9 @@ export default function Home() {
           
           <FadeIn delay={200}>
             <p className="text-lg md:text-xl text-clean-white/90 max-w-2xl mx-auto mb-12 font-serif leading-relaxed">
-              The Overtone Theory is a creative development practice that helps artists, musicians, writers, and creators of all kinds break through internal blocks to make authentic work — the kind that actually feels like you.
+              The Overtone Theory is a creative development practice that helps musicians, writers, artists and creators of all kinds break through internal blocks to make the kind that actually feels like you.
             </p>
+            <p>You just have to know where to look.</p>
           </FadeIn>
           
           <FadeIn delay={400} className="flex flex-col items-center gap-6">
@@ -49,10 +50,10 @@ export default function Home() {
               <p>You've got the talent. You've put in the years. You know you're capable of making something that matters.</p>
               <p>But somewhere between the idea in your head and the thing you actually make, something gets lost. The spark fizzles. The inner critic shows up. You walk away feeling more frustrated than when you started.</p>
               <p>So you try harder. You force it. You noodle, you stare at the blank page, you hope inspiration will strike if you just sit there long enough.</p>
-              <p className="font-semibold text-purple-reign">Here's the thing: the problem exists within you. And you innately have the ability to do something about it.</p>
+              <p className="font-semibold text-purple-reign">What if I told you that you already innately have the ability to do something about it?</p>
               <p>The signal is already there — it's always been there. But somewhere along the way, you let the inner voice take over. The one that edits before you create, judges before you finish, and convinces you that nothing you make is good enough.</p>
-              <p>You got in your own way, and the static took over. That's not a character flaw. It's a habit. And habits can be changed.</p>
-              <p className="font-sans font-bold text-xl text-purple-reign pt-4">The Overtone Theory is an active practice for tuning back in.</p>
+              <p>You got in your own way, and the static took over. That's not a character flaw. You're just human.</p>
+              <p className="font-sans font-bold text-xl text-purple-reign pt-4">The Overtone Theory is a fundamental understanding for actively tuning back in.</p>
             </div>
           </FadeIn>
         </div>
