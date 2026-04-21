@@ -3,6 +3,7 @@ import { Navigation } from '@/components/Navigation';
 import { FadeIn } from '@/components/FadeIn';
 import { CtaButton } from '@/components/CtaButton';
 import { Instagram } from 'lucide-react';
+import headshotUrl from '@assets/headshot_1776730011258.jpg';
 
 export default function Home() {
   return (
@@ -188,9 +189,11 @@ export default function Home() {
         <div className="max-w-5xl mx-auto">
           <div className="flex flex-col md:flex-row gap-12 lg:gap-20 items-start">
             <FadeIn className="w-full md:w-auto flex justify-center shrink-0">
-              <div className="w-[200px] h-[200px] rounded-full bg-abyss text-clean-white flex items-center justify-center font-sans font-bold text-[72px] shadow-2xl">
-                DJ
-              </div>
+              <img
+                src={headshotUrl}
+                alt="DJ"
+                className="w-[200px] h-[200px] rounded-full object-cover object-top shadow-2xl ring-4 ring-soft-violet/30"
+              />
             </FadeIn>
             
             <FadeIn delay={200} className="flex-1 max-w-[600px]">
