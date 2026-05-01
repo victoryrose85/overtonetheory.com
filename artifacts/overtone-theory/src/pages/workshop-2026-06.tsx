@@ -39,7 +39,7 @@ export default function Workshop() {
       <Navigation />
 
       {/* HERO */}
-      <section className="relative min-h-[60svh] flex flex-col items-center justify-center bg-abyss text-clean-white px-6 pt-20 pb-16 overflow-hidden">
+      <section className="relative min-h-[60svh] flex flex-col items-center justify-center bg-abyss text-clean-white px-6 pt-36 pb-16 overflow-hidden">
         <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-full max-w-4xl h-[40vh] bg-purple-reign/20 blur-[100px] rounded-full pointer-events-none" />
 
         <div className="max-w-3xl mx-auto text-center relative z-10">
@@ -65,28 +65,24 @@ export default function Workshop() {
           </FadeIn>
 
           <FadeIn delay={400}>
-            <div className="inline-flex flex-col sm:flex-row gap-4 sm:gap-8 bg-clean-white/5 border border-clean-white/10 rounded-2xl px-8 py-6">
-              <div className="text-center">
-                <p className="text-sm font-sans font-bold uppercase tracking-widest text-soft-violet mb-1">Session 1</p>
+            <div className="inline-flex flex-col sm:flex-row gap-4 sm:gap-0 bg-clean-white/5 border border-clean-white/10 rounded-2xl overflow-hidden">
+              <div className="text-center px-8 py-6 sm:border-r border-clean-white/10">
+                <p className="text-xs font-sans font-bold uppercase tracking-widest text-soft-violet mb-2">Session 1</p>
                 <p className="text-base font-sans font-bold text-clean-white">Sat · June 20</p>
-                <p className="text-sm font-serif text-clean-white/70">Sellwood Community House</p>
+                <p className="text-sm font-serif text-clean-white/70 mt-1">Sellwood Community House</p>
+                <p className="text-sm font-sans text-clean-white/50 mt-1">11am – 12pm</p>
               </div>
-              <div className="hidden sm:block w-px bg-clean-white/10" />
-              <div className="text-center">
-                <p className="text-sm font-sans font-bold uppercase tracking-widest text-soft-violet mb-1">Session 2</p>
+              <div className="text-center px-8 py-6">
+                <p className="text-xs font-sans font-bold uppercase tracking-widest text-soft-violet mb-2">Session 2</p>
                 <p className="text-base font-sans font-bold text-clean-white">Sun · June 28</p>
-                <p className="text-sm font-serif text-clean-white/70">SMILE Station, Sellwood</p>
-              </div>
-              <div className="hidden sm:block w-px bg-clean-white/10" />
-              <div className="text-center">
-                <p className="text-sm font-sans font-bold uppercase tracking-widest text-soft-violet mb-1">Both sessions</p>
-                <p className="text-base font-sans font-bold text-clean-white">11am – 12pm</p>
-                <p className="text-sm font-serif text-clean-white/70">In person · Live on Zoom</p>
+                <p className="text-sm font-serif text-clean-white/70 mt-1">SMILE Station, Sellwood</p>
+                <p className="text-sm font-sans text-clean-white/50 mt-1">11am – 12pm</p>
               </div>
             </div>
+            <p className="text-sm font-sans text-clean-white/50 mt-4">In person · Live on Zoom</p>
           </FadeIn>
 
-          <FadeIn delay={500} className="mt-10">
+          <FadeIn delay={500} className="mt-8">
             <p className="text-sm font-sans text-signal-gold">Pay what you will · No one turned away</p>
             <a
               href="#signup"
@@ -162,7 +158,7 @@ export default function Workshop() {
 
                   {/* In-person / Zoom row */}
                   <div className="grid md:grid-cols-2 divide-y md:divide-y-0 md:divide-x divide-clean-white/10">
-                    <div className="px-8 py-8 flex flex-col items-start gap-4">
+                    <div className="px-8 py-8 flex flex-col justify-between gap-6 min-h-[160px]">
                       <div>
                         <h3 className="text-lg font-bold text-clean-white mb-1">Join in person</h3>
                         <p className="text-sm font-serif text-clean-white/60">{session.venue}, {session.address}</p>
@@ -173,7 +169,7 @@ export default function Workshop() {
                       </CtaButton>
                     </div>
 
-                    <div className="px-8 py-8 flex flex-col items-start gap-4">
+                    <div className="px-8 py-8 flex flex-col justify-between gap-6 min-h-[160px]">
                       <div>
                         <h3 className="text-lg font-bold text-clean-white mb-1">Join on Zoom</h3>
                         <p className="text-sm font-serif text-clean-white/60">Stream live from anywhere.</p>
