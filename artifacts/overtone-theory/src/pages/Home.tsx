@@ -8,6 +8,14 @@ import headshotUrl from '@assets/headshot_1776730011258.jpg';
 export default function Home() {
   return (
     <div className="bg-clean-white overflow-x-hidden">
+      {/* ANNOUNCEMENT BANNER */}
+      <a
+        href="/workshop-2026-06"
+        className="block w-full bg-signal-gold text-abyss text-center py-3 px-6 font-sans font-bold text-sm uppercase tracking-widest hover:bg-yellow-300 transition-colors"
+      >
+        June Workshops — Click Here
+      </a>
+
       <Navigation />
 
       {/* 1. HERO */}
