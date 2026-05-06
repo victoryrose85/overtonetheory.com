@@ -1,9 +1,14 @@
 import { useState, useEffect } from 'react';
+import { useLocation } from 'wouter';
 import { Menu, X } from 'lucide-react';
 
 export function Navigation() {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const [location] = useLocation();
+
+  const isHome = location === '/';
+  const prefix = isHome ? '' : '/';
 
   useEffect(() => {
     const handleScroll = () => {
@@ -14,10 +19,10 @@ export function Navigation() {
   }, []);
 
   const navLinks = [
-    { label: 'How It Works', href: '#process' },
-    { label: 'Stories', href: '#stories' },
-    { label: 'Workshops', href: '#workshops' },
-    { label: 'About', href: '#about' },
+    { label: 'How It Works', href: `${prefix}#process` },
+    { label: 'Stories', href: `${prefix}#stories` },
+    { label: 'Workshops', href: '/workshop-2026-06' },
+    { label: 'About', href: `${prefix}#about` },
   ];
 
   return (
@@ -30,7 +35,7 @@ export function Navigation() {
         }`}
       >
         <div className="max-w-7xl mx-auto px-6 md:px-12 flex items-center justify-between">
-          <a href="#" className="font-sans font-bold text-clean-white tracking-widest text-sm md:text-base hover:text-soft-violet transition-colors">
+          <a href="/" className="font-sans font-bold text-clean-white tracking-widest text-sm md:text-base hover:text-soft-violet transition-colors">
             THE OVERTONE THEORY
           </a>
 
