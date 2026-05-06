@@ -1,6 +1,12 @@
 import { useState, useEffect } from 'react';
 import { useLocation } from 'wouter';
-import { Menu, X } from 'lucide-react';
+import { Menu, X, Instagram, Youtube, Twitch } from 'lucide-react';
+
+const socialLinks = [
+  { label: 'Twitch', href: 'https://twitch.tv/overtonetheory', icon: Twitch },
+  { label: 'Instagram', href: 'https://www.instagram.com/overtonetheory', icon: Instagram },
+  { label: 'YouTube', href: 'https://www.youtube.com/@overtonetheory', icon: Youtube },
+];
 
 export function Navigation() {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -50,6 +56,23 @@ export function Navigation() {
                 {link.label}
               </a>
             ))}
+
+            {/* Social icons */}
+            <div className="flex items-center gap-4 border-l border-clean-white/20 pl-6">
+              {socialLinks.map(({ label, href, icon: Icon }) => (
+                <a
+                  key={label}
+                  href={href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label={label}
+                  className="text-clean-white/60 hover:text-signal-gold transition-colors"
+                >
+                  <Icon size={18} />
+                </a>
+              ))}
+            </div>
+
             <a
               href="https://calendly.com/dj-overtonetheory/30min"
               target="_blank"
@@ -97,6 +120,22 @@ export function Navigation() {
           >
             Let's Chat
           </a>
+          {/* Mobile social icons */}
+          <div className="flex items-center gap-6 mt-4">
+            {socialLinks.map(({ label, href, icon: Icon }) => (
+              <a
+                key={label}
+                href={href}
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label={label}
+                className="text-clean-white/60 hover:text-signal-gold transition-colors"
+                onClick={() => setIsMobileMenuOpen(false)}
+              >
+                <Icon size={24} />
+              </a>
+            ))}
+          </div>
         </nav>
       </div>
     </>

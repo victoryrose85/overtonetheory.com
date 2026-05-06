@@ -2,7 +2,7 @@ import { useState } from 'react';
 import { Navigation } from '@/components/Navigation';
 import { FadeIn } from '@/components/FadeIn';
 import { CtaButton } from '@/components/CtaButton';
-import { Instagram } from 'lucide-react';
+import { Instagram, Youtube, Twitch } from 'lucide-react';
 import headshotUrl from '@assets/headshot_1776730011258.jpg';
 
 export default function Home() {
@@ -303,11 +303,19 @@ export default function Home() {
 
       {/* 13. FOOTER */}
       <footer className="bg-abyss text-clean-white/60 py-12 px-6 border-t border-clean-white/10">
-        <div className="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between gap-6">
+        <div className="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between gap-8">
           <p className="font-sans text-sm">© MIDWID 2026 | overtonetheory.com</p>
-          <a href="#" className="text-clean-white/60 hover:text-signal-gold transition-colors" aria-label="Instagram">
-            <Instagram size={20} />
-          </a>
+          <div className="flex flex-col sm:flex-row items-center gap-6">
+            <a href="https://twitch.tv/overtonetheory" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 font-sans text-sm text-clean-white/60 hover:text-signal-gold transition-colors">
+              <Twitch size={16} /> twitch.tv/overtonetheory
+            </a>
+            <a href="https://www.instagram.com/overtonetheory" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 font-sans text-sm text-clean-white/60 hover:text-signal-gold transition-colors">
+              <Instagram size={16} /> @overtonetheory
+            </a>
+            <a href="https://www.youtube.com/@overtonetheory" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 font-sans text-sm text-clean-white/60 hover:text-signal-gold transition-colors">
+              <Youtube size={16} /> @overtonetheory
+            </a>
+          </div>
         </div>
       </footer>
     </div>
