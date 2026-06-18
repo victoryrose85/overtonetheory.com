@@ -1,7 +1,0 @@
-packages:
-  "lucide-react": "For simple icons like the mobile menu and social links"
-images: []
-notes:
-  - "Custom intersection observer hook used for scroll animations to keep dependencies light"
-  - "Anchor links used for single-page navigation instead of wouter Link to leverage native smooth scrolling"
-  - "Colors mapped exactly to provided hex values in HSL format for Tailwind v4"
