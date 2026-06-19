@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { useLocation } from 'wouter';
+import { useLocation, Link } from 'wouter';
 import { Menu, X, Instagram, Youtube, Twitch } from 'lucide-react';
 
 const socialLinks = [
@@ -8,13 +8,21 @@ const socialLinks = [
   { label: 'YouTube', href: 'https://www.youtube.com/@overtonetheory', icon: Youtube },
 ];
 
+type NavLink =
+  | { label: string; route: true; href: string }
+  | { label: string; route: false; section: string };
+
+const navLinks: NavLink[] = [
+  { label: 'How It Works', route: false, section: 'process' },
+  { label: 'Stories', route: false, section: 'stories' },
+  { label: 'Workshops', route: true, href: '/workshop-2026-06' },
+  { label: 'About', route: false, section: 'about' },
+];
+
 export function Navigation() {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
-  const [location] = useLocation();
-
-  const isHome = location === '/';
-  const prefix = isHome ? '' : '/';
+  const [location, setLocation] = useLocation();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -24,12 +32,17 @@ export function Navigation() {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-  const navLinks = [
-    { label: 'How It Works', href: `${prefix}#process` },
-    { label: 'Stories', href: `${prefix}#stories` },
-    { label: 'Workshops', href: '/workshop-2026-06' },
-    { label: 'About', href: `${prefix}#about` },
-  ];
+  const handleSectionClick = (e: React.MouseEvent<HTMLAnchorElement>, section: string) => {
+    setIsMobileMenuOpen(false);
+    if (location !== '/') {
+      e.preventDefault();
+      sessionStorage.setItem('pendingScroll', section);
+      setLocation('/');
+    }
+  };
+
+  const sectionLinkClass = (size: 'sm' | 'xl') =>
+    `font-sans text-${size} font-medium text-clean-white hover:text-signal-gold transition-colors`;
 
   return (
     <>
@@ -41,21 +54,32 @@ export function Navigation() {
         }`}
       >
         <div className="max-w-7xl mx-auto px-6 md:px-12 flex items-center justify-between">
-          <a href="/" className="font-sans font-bold text-clean-white tracking-widest text-sm md:text-base hover:text-soft-violet transition-colors">
+          <Link href="/" className="font-sans font-bold text-clean-white tracking-widest text-sm md:text-base hover:text-soft-violet transition-colors">
             THE OVERTONE THEORY
-          </a>
+          </Link>
 
           {/* Desktop Nav */}
           <nav className="hidden md:flex items-center gap-8">
-            {navLinks.map((link) => (
-              <a
-                key={link.label}
-                href={link.href}
-                className="font-sans text-sm font-medium text-clean-white hover:text-signal-gold transition-colors"
-              >
-                {link.label}
-              </a>
-            ))}
+            {navLinks.map((link) =>
+              link.route ? (
+                <Link
+                  key={link.label}
+                  href={link.href}
+                  className={sectionLinkClass('sm')}
+                >
+                  {link.label}
+                </Link>
+              ) : (
+                <a
+                  key={link.label}
+                  href={`#${link.section}`}
+                  className={sectionLinkClass('sm')}
+                  onClick={(e) => handleSectionClick(e, link.section)}
+                >
+                  {link.label}
+                </a>
+              )
+            )}
 
             {/* Social icons */}
             <div className="flex items-center gap-4 border-l border-clean-white/20 pl-6">
@@ -101,16 +125,27 @@ export function Navigation() {
         } md:hidden`}
       >
         <nav className="flex flex-col items-center gap-8">
-          {navLinks.map((link) => (
-            <a
-              key={link.label}
-              href={link.href}
-              className="font-sans text-xl font-medium text-clean-white hover:text-signal-gold transition-colors"
-              onClick={() => setIsMobileMenuOpen(false)}
-            >
-              {link.label}
-            </a>
-          ))}
+          {navLinks.map((link) =>
+            link.route ? (
+              <Link
+                key={link.label}
+                href={link.href}
+                className={sectionLinkClass('xl')}
+                onClick={() => setIsMobileMenuOpen(false)}
+              >
+                {link.label}
+              </Link>
+            ) : (
+              <a
+                key={link.label}
+                href={`#${link.section}`}
+                className={sectionLinkClass('xl')}
+                onClick={(e) => handleSectionClick(e, link.section)}
+              >
+                {link.label}
+              </a>
+            )
+          )}
           <a
             href="https://calendly.com/dj-overtonetheory/30min"
             target="_blank"

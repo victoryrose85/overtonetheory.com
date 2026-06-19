@@ -1,4 +1,5 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
+import { Link } from 'wouter';
 import { Navigation } from '@/components/Navigation';
 import { FadeIn } from '@/components/FadeIn';
 import { CtaButton } from '@/components/CtaButton';
@@ -6,6 +7,16 @@ import { Instagram, Youtube, Twitch } from 'lucide-react';
 import headshotUrl from '@/assets/headshot.jpg';
 
 export default function Home() {
+  useEffect(() => {
+    const target = sessionStorage.getItem('pendingScroll');
+    if (target) {
+      sessionStorage.removeItem('pendingScroll');
+      requestAnimationFrame(() => {
+        document.getElementById(target)?.scrollIntoView({ behavior: 'smooth' });
+      });
+    }
+  }, []);
+
   return (
     <div className="bg-clean-white overflow-x-hidden">
       <Navigation />
@@ -17,12 +28,12 @@ export default function Home() {
         
         <div className="max-w-4xl mx-auto text-center relative z-10 flex flex-col items-center">
           <FadeIn>
-            <a
+            <Link
               href="/workshop-2026-06"
               className="inline-block mb-10 bg-signal-gold text-abyss font-sans font-bold text-sm uppercase tracking-widest px-6 py-3 rounded-full hover:brightness-110 transition-all"
             >
-              June Workshops — Click Here
-            </a>
+              June Workshops: Click Here
+            </Link>
             <h1 className="text-[32px] sm:text-[40px] md:text-[56px] lg:text-[64px] font-bold text-clean-white mb-8 leading-[1.1]">
               Let's get you<br />
               <span className="text-signal-gold">back in the flow.</span>
@@ -31,7 +42,7 @@ export default function Home() {
           
           <FadeIn delay={200}>
             <p className="text-lg md:text-xl text-clean-white/90 max-w-2xl mx-auto mb-12 font-serif leading-relaxed">
-              The Overtone Theory is a creative development practice that helps musicians, writers, artists and creators of all kinds push beyond self-imposed limits so they can make work that truly resonates with who they are.
+              The Overtone Theory is a creative development practice that helps musicians, writers, artists, and creators of all kinds push beyond self-imposed limits so they can make work that resonates with who they are.
             </p>
             <p className="text-lg md:text-xl text-clean-white/90 max-w-2xl mx-auto mb-12 font-serif leading-relaxed">You just have to know where to look.</p>
           </FadeIn>
@@ -53,12 +64,12 @@ export default function Home() {
           </FadeIn>
           <FadeIn delay={150}>
             <div className="space-y-6 text-lg md:text-xl font-serif">
-              <p>You sit down with your instrument, your canvas, your keyboard, your tools — and nothing happens. Or something happens, but it's kinda more of the same thing that came last time. And the time before that.</p>
+              <p>You sit down with your instrument, your canvas, your keyboard, your tools, and nothing happens. Or something happens, but it's kinda more of the same thing that came last time. And the time before that.</p>
               <p>You've got the talent. You've put in the years. You know you're capable of making something that matters.</p>
               <p>But somewhere between the idea in your head and the thing you actually make, something gets lost. The spark fizzles. The inner critic shows up. You walk away feeling more frustrated than when you started.</p>
               <p>So you try harder. You force it. You noodle, you stare at the blank page, you hope inspiration will strike if you just sit there long enough.</p>
-              <p className="font-semibold text-purple-reign">Would you believe me if I said that you're naturally equipped to do something about it?</p>
-              <p>The signal is already there. It's always been there. But somewhere along the way, you let the inner voice take over. The one that edits before you create, judges before you finish, convinces you that it's not good enough.</p>
+              <p className="font-semibold text-purple-reign">Would you believe me if I said you're naturally equipped to do something about it?</p>
+              <p>The signal is already there. It's always been there. But somewhere along the way, you let the inner voice take over. The one that edits before you create, judges before you finish, convinces you it's not good enough.</p>
               <p>You got in your own way, and the static took over. That's not a character flaw. You're just human.</p>
               <p className="font-sans font-bold text-xl text-purple-reign pt-4">The Overtone Theory is a fundamental understanding for actively tuning back in.</p>
             </div>
@@ -75,9 +86,9 @@ export default function Home() {
           
           <FadeIn delay={150}>
             <div className="space-y-6 text-lg md:text-xl font-serif text-clean-white/90">
-              <p>In the physics of music and electronics, an overtone is any resonant frequency that exists naturally above the fundamental note. You don't force overtones into existence. It just happens. However, with the right conditions — specific vibrations, tuned resonance, the right materials — the overtones can be shaped and selected, intentionally formed to make a specific sound. It's what makes a piano, violin, and saxophone sound different, even though they play the same note.</p>
+              <p>In the physics of music and electronics, an overtone is any resonant frequency that exists naturally above the fundamental note. You don't force overtones into existence. It just happens. But with the right conditions (specific vibrations, tuned resonance, the right materials), the overtones can be shaped and selected, formed intentionally to make a specific sound. It's what makes a piano, violin, and saxophone sound different, even though they play the same note.</p>
               <p>Your creativity works the same way.</p>
-              <p>You already have everything you need to create. The influences, the experiences, the emotions, the skill. It's all there, packaged up in your unique perspective with unfathomable depth. But something is dampening the signal. Self-criticism, fear of judgement, creative habits that stopped working years ago, a disconnection between what you feel and what you make.</p>
+              <p>You already have everything you need to create. The influences, the experiences, the emotions, the skill. It's all there, wrapped up in a perspective nobody else has. But something is dampening the signal: self-criticism, fear of judgement, creative habits that stopped working years ago, a disconnect between what you feel and what you make.</p>
               <p className="font-semibold text-purple-reign">Let's be real: It's hard out there in the real life. It can be real hard to feel creative.</p>
               <p>The Overtone Theory is a practice I've developed over 15+ years of working with musicians, artists, and creators of all kinds. It combines guided imaginative exercises, meditation, and compassionate conversation to help you reconnect with your creative self.</p>
               <p>I don't teach you how to make art. You already know how. I help you get out of your own way so your art can come through honestly.</p>
@@ -85,10 +96,10 @@ export default function Home() {
           </FadeIn>
 
           <FadeIn delay={300}>
-            <h3 className="text-2xl md:text-3xl font-bold mt-16 mb-6 text-soft-violet">Your body is an antenna.</h3>
+            <h3 className="text-2xl md:text-3xl font-bold mt-16 mb-6 text-soft-violet">The antenna</h3>
             <div className="space-y-6 text-lg md:text-xl font-serif text-clean-white/90">
-              <p>This isn't a metaphor. Your brain and fascia are literally piezoelectric — they generate a measurable electric field through physical movement and chemical processes. Your body produces and exists within its own electromagnetic field.</p>
-              <p>You — the one piloting your meat suit — you are the one making sense of the signals your body receives. Like tuning a radio, you get to choose what frequency you're paying attention to. The antenna doesn't care if it's picking up jazz, static, or silence. It just receives whatever's in the field.</p>
+              <p>This isn't a metaphor. Your brain and fascia are literally piezoelectric; they generate a measurable electric field through physical movement and chemical processes. Your body produces and exists within its own electromagnetic field.</p>
+              <p>You're the one piloting your meat suit, and you're the one making sense of the signals your body receives. Like tuning a radio, you get to choose what frequency you're paying attention to. The antenna doesn't care if it's picking up jazz, static, or silence. It just receives whatever's in the field.</p>
               <p>You are the choice-maker. You decide what to tune into.</p>
               <p>When you're creatively blocked, you're just tuned to the wrong station. The signal is still there. You've just lost the frequency.</p>
               <p className="font-sans font-bold text-xl text-signal-gold pt-4">The Overtone Theory helps you tune back in.</p>
@@ -109,22 +120,22 @@ export default function Home() {
               {
                 num: "1",
                 title: "Ground",
-                desc: "Before you can hear anything, you need to quiet the noise. We start by settling the mind and body, reducing the static of self-doubt, overthinking, and external pressure. Through conversation and simple grounding exercises, you'll arrive at a place of stillness — not emptiness, but holding an open space for clarity. Like clearing a surface so that the art has a place to be displayed."
+                desc: "Before you can hear anything, you need to quiet the noise. We start by settling the mind and body and turning down the static of self-doubt, overthinking, and outside pressure. Through conversation and simple grounding exercises, you'll arrive at a place of stillness, an open space with room for clarity, like clearing a surface so the art has somewhere to sit."
               },
               {
                 num: "2",
                 title: "Attune",
-                desc: "Once you're grounded, we tune in. Through guided meditation and imaginative exercises, you'll reconnect with your own body, your emotions, and the creative energy you've been disconnected from. This is where most people have their \"oh my god\" moment — the realization that the inspiration they've been waiting for was already there. They just couldn't feel it."
+                desc: "Once you're grounded, we tune in. Through guided meditation and imaginative exercises, you'll reconnect with your body, your emotions, and the creative energy you've been cut off from. This is where most people have their \"oh my god\" moment, the realization that the inspiration they'd been waiting for was already there. They just couldn't feel it."
               },
               {
                 num: "3",
                 title: "Transceive",
-                desc: "This is the creative act itself. You're simultaneously receiving and transmitting — pulling from your influences, emotions, and experiences while expressing something new through your art. You're not just making something. You're in conversation with it. The art is shaped by what you're honestly feeling, and what you're feeling is shaped by what the art is becoming. This is the state that prolific artists access instinctively. The Overtone Theory makes it accessible on purpose."
+                desc: "This is the creative act itself. You're receiving and transmitting at the same time: pulling from your influences, emotions, and experiences while expressing something new through your art. You're in conversation with the work. The art is shaped by what you're honestly feeling, and what you're feeling is shaped by what the art is becoming. This is the state that prolific artists access instinctively. The Overtone Theory makes it accessible on purpose."
               },
               {
                 num: "4",
                 title: "Sustain",
-                desc: "The session ends, but the signal doesn't. Everything you learn in our work together is a repeatable practice — techniques you can use on your own, whenever you need them. Creative blocks are inevitable. But once you understand how to tune back in, they stop being walls and start being momentary static. You'll know exactly how to clear it."
+                desc: "The session ends, but the signal doesn't. Everything you learn in our work together is a repeatable practice, techniques you can use on your own whenever you need them. Creative blocks are inevitable. But once you understand how to tune back in, they stop being walls and start being momentary static. You'll know exactly how to clear it."
               }
             ].map((step, idx) => (
               <FadeIn key={step.num} delay={idx * 150} className="flex flex-col md:flex-row gap-6 md:gap-12 items-start">
@@ -145,7 +156,7 @@ export default function Home() {
       <section id="for-you" className="py-24 md:py-32 px-6 bg-gradient-to-b from-abyss to-purple-reign text-clean-white">
         <div className="max-w-6xl mx-auto">
           <FadeIn>
-            <h2 className="text-3xl md:text-4xl font-bold mb-16 text-center">Who This Is For</h2>
+            <h2 className="text-3xl md:text-4xl font-bold mb-16 text-center">Who this is for</h2>
           </FadeIn>
           <div className="grid md:grid-cols-2 gap-16 lg:gap-24">
             <FadeIn>
@@ -153,7 +164,7 @@ export default function Home() {
               <ul className="space-y-4 text-lg font-serif">
                 <li className="custom-bullet">You're a musician, writer, visual artist, animator, filmmaker, content creator, or any kind of creator</li>
                 <li className="custom-bullet">You've got the skill and the talent, but something is blocking your creative output</li>
-                <li className="custom-bullet">You've tried forcing it, waiting for inspiration, or "just doing it" — and none of it has worked</li>
+                <li className="custom-bullet">You've tried forcing it, waiting for inspiration, or "just doing it," and none of it has worked</li>
                 <li className="custom-bullet">You're willing to try something different, even if it feels uncomfortable at first</li>
                 <li className="custom-bullet">You want a repeatable process, not a one-time fix</li>
                 <li className="custom-bullet">You're more curious than skeptical</li>
@@ -209,8 +220,8 @@ export default function Home() {
                 <p>The name MIDWID comes from a quote I believe is attributed to Ray Charles. When asked how he makes his amazing music, he just laughed and said, "Man, I just make it do what it do."</p>
                 <p className="font-semibold">MIDWID: Make It Do What It Do. That's the philosophy. Don't overthink it. Let the thing be what it wants to be.</p>
                 <p>I started my career at Arlyn Studios in Austin, TX, learning from award-winning producers and engineers. Over the years, I've worked with hundreds of bands across recording studios and live venues, from blues to punk to hip-hop to jazz. I ran live sound at Maggie Mae's on 6th Street for years, including multiple SXSW festival stages. I composed music for short films, worked sound design for documentaries, performed improv, written short stories, painted, and have learned so much about the creative process.</p>
-                <p>And yet, my curious mind wanted to know how audio equipment worked so badly that I went back to school and earned a Bachelor's degree in Electrical Engineering. For as much as I learned about circutry, math, and physics, that experience also taught me how to explain complex things simply, how to troubleshoot, and (most importantly) how to ask the right questions.</p>
-                <p>In my persuit to create equipment that would make my art better, I quickly realized the quality of the music has absolutely nothing to do with the equipment. It has everything to do with the person making it. So, I pivoted to using my degree to get jobs just for the money.</p>
+                <p>And yet, my curious mind wanted to know how audio equipment worked so badly that I went back to school and earned a Bachelor's degree in Electrical Engineering. For as much as I learned about circuitry, math, and physics, that experience also taught me how to explain complex things simply, how to troubleshoot, and (most importantly) how to ask the right questions.</p>
+                <p>In my pursuit to create equipment that would make my art better, I quickly realized the quality of the music has absolutely nothing to do with the equipment. It has everything to do with the person making it. So, I pivoted to using my degree to get jobs just for the money.</p>
                 <p>After years of losing my own creative drive in engineering jobs that didn't fit, I sought out people living the lives I wanted. I learned mental, emotional, and imaginative techniques from them. When I applied those techniques to my own creativity, it felt like breathing again. The art came freely. I end so many more sessions with satisfaction, whatever the result of the art is.</p>
                 <p>Now I combine those techniques with my experience producing music to help other creatives do the same thing. The Overtone Theory is the result of 15+ years of learning how creative energy actually works. While I call it a theory, it's been developed through a wide range of personal experience through hundreds of real sessions with real people.</p>
                 <p className="text-xl font-bold text-purple-reign pt-4">The world needs more of your art. And selfishly? I just want to experience it.</p>
@@ -273,30 +284,7 @@ export default function Home() {
               />
             </div>
 
-            <div className="max-w-xl mx-auto text-left bg-clean-white/5 p-8 md:p-12 rounded-2xl border border-clean-white/10">
-              <h3 className="text-2xl font-bold mb-8 text-center text-signal-gold">Send a message</h3>
-              <form className="space-y-6" onSubmit={(e) => e.preventDefault()}>
-                <div>
-                  <label htmlFor="name" className="block text-sm font-medium mb-2 text-clean-white/80">Name</label>
-                  <input type="text" id="name" className="w-full bg-abyss border border-soft-violet/30 rounded-lg px-4 py-3 text-clean-white focus:outline-none focus:border-signal-gold transition-colors" placeholder="Your name" />
-                </div>
-                <div>
-                  <label htmlFor="email" className="block text-sm font-medium mb-2 text-clean-white/80">Email</label>
-                  <input type="email" id="email" className="w-full bg-abyss border border-soft-violet/30 rounded-lg px-4 py-3 text-clean-white focus:outline-none focus:border-signal-gold transition-colors" placeholder="your@email.com" />
-                </div>
-                <div>
-                  <label htmlFor="link" className="block text-sm font-medium mb-2 text-clean-white/80">Link to your work (optional)</label>
-                  <input type="url" id="link" className="w-full bg-abyss border border-soft-violet/30 rounded-lg px-4 py-3 text-clean-white focus:outline-none focus:border-signal-gold transition-colors" placeholder="https://" />
-                </div>
-                <div>
-                  <label htmlFor="message" className="block text-sm font-medium mb-2 text-clean-white/80">Message</label>
-                  <textarea id="message" rows={4} className="w-full bg-abyss border border-soft-violet/30 rounded-lg px-4 py-3 text-clean-white focus:outline-none focus:border-signal-gold transition-colors" placeholder="What's on your mind?"></textarea>
-                </div>
-                <button type="submit" className="w-full bg-signal-gold text-abyss font-sans font-bold px-8 py-4 rounded-lg hover:brightness-110 transition-all mt-4">
-                  Send Message
-                </button>
-              </form>
-            </div>
+            <ContactForm />
           </FadeIn>
         </div>
       </section>
@@ -328,20 +316,20 @@ function StoriesSection() {
   const stories = [
     {
       name: "Gerschweyn",
-      content: "Gerschweyn is an extraordinarily talented pianist, singer, and songwriter. They'd written a concept album and brought me in to help with a few tracks. One song — just piano and vocal — they wanted it to be \"huge.\" Epic. Over-the-top. But they couldn't explain exactly what was in their head.\n\nWe spent nearly a full day together, not working on the music itself, but exploring what was trying to be said. The emotions to be conveyed. The story to be told. The desired feelings listener should walk away with.\n\nBy creating a space where they could express without judgement — from the ego, from me, from the outside world — we found our way into making one of the most creative, moving pieces of music I've ever had the privilege to collaborate on. The energy from the art was transmitted honestly, clearly, and powerfully. It was, indeed, epic."
+      content: "Gerschweyn is an extraordinarily talented pianist, singer, and songwriter. They'd written a concept album and brought me in to help with a few tracks. On one specific song (just piano and vocal), they wanted it to be \"huge.\" Epic. Over-the-top. But they couldn't explain exactly what was in their head.\n\nWe spent nearly a full day together, not working on the music itself, but exploring what was trying to be said. The emotions to be conveyed. The story to be told. The desired feelings a listener should walk away with.\n\nBy creating a space where they could express without judgement from the ego, from me, from the outside world, we found our way into making one of the most creative, moving pieces of music I've ever had the privilege to collaborate on. The energy from the art came through honestly and clearly. It was, indeed, epic."
     },
     
     {
       name: "Jonny",
-      content: "Jonny is a musician, singer, songwriter, frontman, and all around creative force. A plethora of ideas, that man's well will never run dry. His penchant to grab an idea and run with it is damn impressive.\n\nBut even to a creative guy like Jonny, life just plain gets hard sometimes. And for a person who lives and breathes through his creativity, it became difficult to wade through all of those possibilities while still trying to keep his head above water. I could feel the overwhelm in him.\n\nIt was at this time that I had just compiled my first version of what I'm now calling The Overtone Theory. Being one of my oldest, most trusted friends, he graciously allowed me to teach him what I've learned.\n\nOver a few hours on Zoom, he came to understand exactly what he wanted, exactly what he was trying to do with his art, and clearly identified the next steps he needed to take to get him there.\n\nHe's since returned to the prolific artist he's always been, unafraid to make his process his own, and is actively creating the best art I've heard from him in years."
+      content: "Jonny is a musician, singer, songwriter, frontman, and all around creative force. A plethora of ideas, that man's well will never run dry. His penchant to grab an idea and run with it is damn impressive.\n\nBut even to a creative guy like Jonny, sometimes life just plain gets hard. And for a person who lives and breathes through his creativity, it became difficult to wade through all of those possibilities while still trying to keep his head above water. I could feel the overwhelm in him.\n\nIt was at this time that I had just compiled my first version of what I'm now calling The Overtone Theory. Being one of my oldest, most trusted friends, he graciously allowed me to teach him what I've learned.\n\nOver a few hours on Zoom, he came to understand exactly what he wanted, exactly what he was trying to do with his art, and clearly identified the next steps he needed to take to get him there.\n\nHe's since returned to the prolific artist he's always been, unafraid to make his process his own, and is actively creating the best art I've heard from him in years."
     },
     {
       name: "Jordan",
-      content: "Jordan is a talented guitarist and live sound engineer who could never find the reason to record his own music. He'd dabble in recording at home but always felt stuck — he didn't know what he wanted his songs to be.\n\nWe spent a day together. I walked him through my understanding of how we interact with creative energy, then we explored what Jordan actually feels when he thinks about his art. When I asked him how he felt about the demo he shared with me, he told me he \"doesn't feel things\" in his body, even when making the art.\n\nThrough compassionate conversation and a little bit of guided meditation, he reconnected with his body. We then listened back to the demo, independently taking notes on what we felt when we felt it. And wouldn't you know it, Jordan's capability for emotion runs deep. Reconnected, recharged, and invigorated, we sketched out the rest of the track.\n\nWithin a month, he'd recorded his first song in a professional studio."
+      content: "Jordan is a talented guitarist and live sound engineer who could never find the reason to record his own music. He'd dabble in recording at home but always felt stuck. He didn't know what he wanted his songs to be.\n\nWe spent a day together. I walked him through my understanding of how we interact with creative energy, then we explored what Jordan actually feels when he interacts with his art. When I asked him how he felt about the demo he shared with me, he told me he \"doesn't feel things\" in his body, even when making the art.\n\nThrough compassionate conversation and a little bit of guided meditation, he reconnected with his body. We then listened back to the demo, independently taking notes on what we felt when we felt it. And wouldn't you know it, Jordan's capability for emotion runs deep. Recharged, we sketched out the rest of the track.\n\nWithin a month, he'd recorded his first song in a professional studio."
     },
     {
       name: "Patrick",
-      content: "Patrick isn't an artist. He was just a guy I met at a dive bar.\n\nWe struck up a conversation over a game of pool, and I held open space for him to talk completely free of judgement, no fear to express himself. He was at a crossroads in life, trying to decide whether to fight for something he loved or pivot to find happiness a different way.\n\nI guided him through a brief meditation where he connected with his own emotions honestly — maybe for the first time. He recognized what he wanted. He knew what he needed to do next.\n\nA month later, I ran into him at the same bar. He'd made changes. The thing he thought he was fighting for wasn't actually a fight — he just had to choose to change his perspective on how he showed up for it. A year after that, he told me point-blank that our conversation that first night changed his entire mode of thinking.\n\nHis face was rested. He carried himself with confidence. He smiled.\n\nI include this experience to show that what I have to teach isn't just for folks who consider themselves artists. It's for anyone who wants to create something meaningful."
+      content: "Patrick isn't an artist. He was just a guy I met at a dive bar.\n\nWe struck up a conversation over a game of pool, and I held open space for him to talk completely free of judgement, no fear to express himself. He was at a crossroads in life, trying to decide whether to fight for something he loved or pivot to find happiness a different way.\n\nI guided him through a brief meditation where he connected with his own emotions honestly, maybe for the first time. He recognized what he wanted. He knew what he needed to do next.\n\nA month later, I ran into him at the same bar. He'd made changes. The thing he thought he was fighting for wasn't actually a fight; he just had to choose to change his perspective on how he showed up for it. A year after that, he told me point-blank that our conversation that first night changed his entire mode of thinking.\n\nHis face was rested. He carried himself with confidence. He smiled.\n\nI include this experience to show that what I have to teach isn't just for folks who consider themselves artists. It's for anyone who wants to create something meaningful."
     },
   ];
 
@@ -390,6 +378,59 @@ function StoriesSection() {
         </FadeIn>
       </div>
     </section>
+  );
+}
+
+function ContactForm() {
+  const [fields, setFields] = useState({ name: '', email: '', link: '', message: '' });
+
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+    setFields(prev => ({ ...prev, [e.target.name]: e.target.value }));
+  };
+
+  const handleSubmit = (e: React.SyntheticEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    const body = [
+      `From: ${fields.name}`,
+      `Email: ${fields.email}`,
+      fields.link ? `Work: ${fields.link}` : '',
+      '',
+      fields.message,
+    ].filter(Boolean).join('\n');
+
+    window.location.href = `mailto:overtonetheory@gmail.com?subject=${encodeURIComponent(`Message from ${fields.name}`)}&body=${encodeURIComponent(body)}`;
+  };
+
+  const inputClass = "w-full bg-abyss border border-soft-violet/30 rounded-lg px-4 py-3 text-clean-white focus:outline-none focus:border-signal-gold transition-colors";
+
+  return (
+    <div className="max-w-xl mx-auto text-left bg-clean-white/5 p-8 md:p-12 rounded-2xl border border-clean-white/10">
+      <h3 className="text-2xl font-bold mb-8 text-center text-signal-gold">Send a message</h3>
+      <form className="space-y-6" onSubmit={handleSubmit}>
+        <div>
+          <label htmlFor="cf-name" className="block text-sm font-medium mb-2 text-clean-white/80">Name</label>
+          <input type="text" id="cf-name" name="name" required value={fields.name} onChange={handleChange} className={inputClass} placeholder="Your name" />
+        </div>
+        <div>
+          <label htmlFor="cf-email" className="block text-sm font-medium mb-2 text-clean-white/80">Email</label>
+          <input type="email" id="cf-email" name="email" required value={fields.email} onChange={handleChange} className={inputClass} placeholder="your@email.com" />
+        </div>
+        <div>
+          <label htmlFor="cf-link" className="block text-sm font-medium mb-2 text-clean-white/80">Link to your work (optional)</label>
+          <input type="url" id="cf-link" name="link" value={fields.link} onChange={handleChange} className={inputClass} placeholder="https://" />
+        </div>
+        <div>
+          <label htmlFor="cf-message" className="block text-sm font-medium mb-2 text-clean-white/80">Message</label>
+          <textarea id="cf-message" name="message" rows={4} required value={fields.message} onChange={handleChange} className={inputClass} placeholder="What's on your mind?" />
+        </div>
+        <button
+          type="submit"
+          className="w-full bg-signal-gold text-abyss font-sans font-bold px-8 py-4 rounded-lg hover:brightness-110 transition-all mt-4"
+        >
+          Send Message
+        </button>
+      </form>
+    </div>
   );
 }
 

@@ -1,3 +1,4 @@
+import { useEffect } from 'react';
 import { Navigation } from "@/components/Navigation";
 import { FadeIn } from "@/components/FadeIn";
 import { Instagram, Youtube, Twitch } from 'lucide-react';
@@ -36,6 +37,10 @@ const sessions: WorkshopSession[] = [
 ];
 
 export default function Workshop() {
+  useEffect(() => {
+    window.scrollTo({ top: 0, behavior: 'instant' });
+  }, []);
+
   return (
     <div className="bg-clean-white overflow-x-hidden">
       <Navigation />
